@@ -22,9 +22,19 @@ export default class CustomSideBarMenu extends Component{
         aspect: [4, 3],
         quality: 1,
      });
-     console.log(uri);
+
      if (!cancelled) this. updateProfilePicture(uri);
+
+     // Points to the root reference
+     //var file = uri.createObjectURL()
+     const file = new Blob([JSON.stringify(uri, null, 2)], {type : 'application/json'});
+     console.log(file)
+   var storageRef = firebase.storage().ref('user_profiles/'+ file);
+
+   storageRef.put(file)
    }
+
+   // Create a root reference
 
 
 
