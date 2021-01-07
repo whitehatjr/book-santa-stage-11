@@ -4,5 +4,7 @@
   "dev": true,
   "minify": false,
   "urlRandomness": "rm-pg6",
-  "https": false
+  "https": false,
+  "scheme": null,
+  "devClient": false
 }
